@@ -22,8 +22,9 @@
 
 ## Ответ 
 
-![image](https://github.com/user-attachments/assets/72b43857-516c-440a-9a08-8c58da304b1d)
-![image](https://github.com/user-attachments/assets/a3816c6e-dfb3-4939-b891-5a69b29185b1)
+![image](https://github.com/user-attachments/assets/b8752f93-fb08-47c4-875c-44db9c30df37)
+![image](https://github.com/user-attachments/assets/fc3fbc97-31b9-4019-b7f2-721ce838bff9)
+
 
 
 ---
