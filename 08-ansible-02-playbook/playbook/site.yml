@@ -1,36 +1,32 @@
 ---
 - name: Install Clickhouse
   hosts: clickhouse
-  handlers:
-    - name: Start clickhouse service
-      become: true
-      ansible.builtin.service:
-        name: clickhouse-server
-        state: restarted
+  become: yes
+
   tasks:
-    - block:
-        - name: Get clickhouse distrib
-          ansible.builtin.get_url:
-            url: "https://packages.clickhouse.com/rpm/stable/{{ item }}-{{ clickhouse_version }}.noarch.rpm"
-            dest: "./{{ item }}-{{ clickhouse_version }}.rpm"
-          with_items: "{{ clickhouse_packages }}"
-      rescue:
-        - name: Get clickhouse distrib
-          ansible.builtin.get_url:
-            url: "https://packages.clickhouse.com/rpm/stable/clickhouse-common-static-{{ clickhouse_version }}.x86_64.rpm"
-            dest: "./clickhouse-common-static-{{ clickhouse_version }}.rpm"
-    - name: Install clickhouse packages
-      become: true
-      ansible.builtin.yum:
-        name:
-          - clickhouse-common-static-{{ clickhouse_version }}.rpm
-          - clickhouse-client-{{ clickhouse_version }}.rpm
-          - clickhouse-server-{{ clickhouse_version }}.rpm
-      notify: Start clickhouse service
-    - name: Flush handlers
-      meta: flush_handlers
-    - name: Create database
-      ansible.builtin.command: "clickhouse-client -q 'create database logs;'"
-      register: create_db
-      failed_when: create_db.rc != 0 and create_db.rc !=82
-      changed_when: create_db.rc == 0
+    - name: Gather facts
+      ansible.builtin.setup:
+
+    - name: Update package list
+      ansible.builtin.apt:
+        update_cache: yes
+
+    - name: Remove old ClickHouse packages
+      ansible.builtin.apt:
+        name: clickhouse-common-static
+        state: absent
+
+    - name: Create directory for Clickhouse client
+      ansible.builtin.file:
+        path: /tmp/clickhouse-common-static
+        state: directory
+        mode: '0755'  # Опционально, чтобы устанавливать права доступа
+
+    - name: Get Clickhouse common static distribution
+      ansible.builtin.get_url:
+        url: "https://packages.clickhouse.com/deb/pool/main/c/clickhouse-common-static/clickhouse-common-static_22.3.3.44_amd64.deb"
+        dest: "/tmp/clickhouse-common-static/clickhouse-common-static_22.3.3.44_amd64.deb"
+
+    - name: Install Clickhouse common static
+      ansible.builtin.apt:
+        deb: "/tmp/clickhouse-common-static/clickhouse-common-static_22.3.3.44_amd64.deb"
