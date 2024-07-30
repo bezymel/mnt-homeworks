@@ -3,11 +3,17 @@
   hosts: all
   become: true
   tasks:
+    - name: Создание директории для LightHouse
+      ansible.builtin.file:
+        path: /var/www/lighthouse
+        state: directory
+        mode: '0755'  # Установка прав доступа для директории
+
     - name: Скачивание статики LightHouse
       ansible.builtin.get_url:
         url: https://github.com/GoogleChrome/lighthouse/archive/refs/heads/main.zip
         dest: /tmp/lighthouse.zip
-        mode: '0644'  # Установка правильных прав доступа
+        mode: '0644'  # Установка прав доступа
 
     - name: Распаковка статики LightHouse
       ansible.builtin.unarchive:
@@ -24,7 +30,7 @@
       ansible.builtin.template:
         src: lighthouse_nginx.conf.j2
         dest: /etc/nginx/conf.d/lighthouse.conf
-        mode: '0644'  # Установка правильных прав доступа
+        mode: '0644'  # Установка прав доступа
       notify:
         - Перезапуск Nginx
 
