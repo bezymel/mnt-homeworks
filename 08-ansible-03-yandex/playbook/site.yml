@@ -1,1 +1,74 @@
+---
+- name: Install Clickhouse
+  hosts: clickhouse
+  become: true
 
+  tasks:
+    - name: Gather facts
+      ansible.builtin.setup:
+
+    - name: Update package list
+      ansible.builtin.apt:
+        update_cache: true
+
+    - name: Remove old ClickHouse packages
+      ansible.builtin.apt:
+        name: clickhouse-common-static
+        state: absent
+
+    - name: Create directory for Clickhouse client
+      ansible.builtin.file:
+        path: /tmp/clickhouse-common-static
+        state: directory
+        mode: '0755'  # Опционально, чтобы устанавливать права доступа
+
+    - name: Get Clickhouse common static distribution
+      ansible.builtin.get_url:
+        url: "https://packages.clickhouse.com/deb/pool/main/c/clickhouse-common-static/clickhouse-common-static_22.3.3.44_amd64.deb"
+        dest: "/tmp/clickhouse-common-static/clickhouse-common-static_22.3.3.44_amd64.deb"
+
+    - name: Install Clickhouse common static
+      ansible.builtin.apt:
+        deb: "/tmp/clickhouse-common-static/clickhouse-common-static_22.3.3.44_amd64.deb"
+
+    - name: Check Vector status
+      ansible.builtin.shell: systemctl status vector
+      register: vector_status
+      ignore_errors: true
+      when: ansible_facts['os_family'] == "Debian"
+
+    - name: Show Vector status
+      ansible.builtin.debug:
+        msg: "{{ vector_status.stdout }}"
+      when: ansible_facts['os_family'] == "Debian"
+
+
+- name: Установка и настройка LightHouse
+  hosts: lighthouse
+  tasks:
+    - name: Скачивание статики LightHouse
+      get_url:
+        url: "https://path/to/lighthouse/static.zip"
+        dest: "/tmp/lighthouse_static.zip"
+
+    - name: Распаковка статических файлов
+      unarchive:
+        src: "/tmp/lighthouse_static.zip"
+        dest: "/var/www/lighthouse"
+        remote_src: yes
+        
+    - name: Установка Nginx
+      package:
+        name: nginx
+        state: present
+
+    - name: Настройка конфигурации Nginx для LightHouse
+      template:
+        src: "nginx_lighthouse.conf.j2"
+        dest: "/etc/nginx/conf.d/lighthouse.conf"
+
+    - name: Запуск Nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes
