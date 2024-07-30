@@ -48,9 +48,12 @@
 
 ![image](https://github.com/user-attachments/assets/c241d2c0-a3b7-432c-b199-07784abbc35d)
 
-![image](https://github.com/user-attachments/assets/620c4fdd-0825-415e-8376-07e5a0fe4eb2)
+![image](https://github.com/user-attachments/assets/ed9d3473-0f11-4922-ba82-8e6aed2db324)
 
-![image](https://github.com/user-attachments/assets/282f1dfb-39ae-48df-af10-d56422678699)
+![image](https://github.com/user-attachments/assets/d12a5be5-9d1f-4fc3-bdca-4fa4c2e27b39)
+
+![image](https://github.com/user-attachments/assets/f79a7386-5c97-4ddd-bb44-314c8c1cd7de)
+
 
 
 ### Как оформить решение задания
