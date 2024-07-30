@@ -50,6 +50,7 @@
 
 ![image](https://github.com/user-attachments/assets/620c4fdd-0825-415e-8376-07e5a0fe4eb2)
 
+![image](https://github.com/user-attachments/assets/282f1dfb-39ae-48df-af10-d56422678699)
 
 
 ### Как оформить решение задания
