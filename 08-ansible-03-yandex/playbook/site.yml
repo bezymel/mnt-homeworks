@@ -1,33 +1,41 @@
-- name: Install Nginx
-      ansible.builtin.apt:
+---
+- name: Установка и настройка LightHouse
+  hosts: all
+  become: true
+  tasks:
+    - name: Скачивание статики LightHouse
+      ansible.builtin.get_url:
+        url: https://github.com/GoogleChrome/lighthouse/archive/refs/heads/main.zip
+        dest: /tmp/lighthouse.zip
+        mode: '0644'  # Установка правильных прав доступа
+
+    - name: Распаковка статики LightHouse
+      ansible.builtin.unarchive:
+        src: /tmp/lighthouse.zip
+        dest: /var/www/lighthouse
+        remote_src: true
+
+    - name: Установка Nginx
+      ansible.builtin.package:
         name: nginx
         state: present
 
-    - name: Start and enable Nginx
-      ansible.builtin.systemd:
+    - name: Настройка конфигурации Nginx для LightHouse
+      ansible.builtin.template:
+        src: lighthouse_nginx.conf.j2
+        dest: /etc/nginx/conf.d/lighthouse.conf
+        mode: '0644'  # Установка правильных прав доступа
+      notify:
+        - Перезапуск Nginx
+
+    - name: Запуск Nginx
+      ansible.builtin.service:
         name: nginx
         state: started
         enabled: true
 
-    - name: Copy LightHouse static files
-      ansible.builtin.copy:
-        src: "files/lighthouse"
-        dest: "/usr/share/nginx/html/lighthouse"
-        mode: '0755'
-
-    - name: Configure Nginx for LightHouse
-      ansible.builtin.template:
-        src: "templates/nginx_lighthouse.conf.j2"
-        dest: "/etc/nginx/sites-available/lighthouse"
-
-    - name: Enable Nginx configuration
-      ansible.builtin.shell: |
-        ln -s /etc/nginx/sites-available/lighthouse /etc/nginx/sites-enabled/lighthouse
-        rm -f /etc/nginx/sites-enabled/default
-      args:
-        executable: /bin/bash
-
-    - name: Reload Nginx
-      ansible.builtin.systemd:
+  handlers:
+    - name: Перезапуск Nginx
+      ansible.builtin.service:
         name: nginx
-        state: reloaded
+        state: restarted
