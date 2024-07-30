@@ -3,21 +3,6 @@ all:
   children:
     clickhouse:
       hosts:
-        clickhouse-01:
-          ansible_connection: ssh
-          ansible_host: 89.169.165.186
-          ansible_ssh_private_key: ~/.ssh/id_rsa  # Используйте приватный ключ
-          ansible_user: ubuntu1                    # Убедитесь, что пользователь существует и имеет доступ
-    clickhouse:
-      hosts:
-        clickhouse-02:
-          ansible_connection: ssh
-          ansible_host: 84.201.140.247
-          ansible_ssh_private_key: ~/.ssh/id_rsa  # Используйте приватный ключ
-          ansible_user: ubuntu2                    # Убедитесь, что пользователь существует и имеет доступ
-    clickhouse:
-      hosts:
-        clickhouse-03:
           ansible_connection: ssh
           ansible_host: 89.169.161.241
           ansible_ssh_private_key: ~/.ssh/id_rsa  # Используйте приватный ключ
