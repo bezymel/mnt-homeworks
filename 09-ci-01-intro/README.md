@@ -48,6 +48,8 @@
 
 ![image](https://github.com/user-attachments/assets/c241d2c0-a3b7-432c-b199-07784abbc35d)
 
+![image](https://github.com/user-attachments/assets/9012f590-6ba1-45de-a641-17105b50e1a3)
+
 
 ### Как оформить решение задания
 
