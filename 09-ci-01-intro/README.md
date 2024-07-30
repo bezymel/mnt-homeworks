@@ -41,7 +41,12 @@
 ## Ответ
 
 ![image](https://github.com/user-attachments/assets/e31f86f1-3978-4438-b4ce-bc5c2eabacf5)
+
 ![image](https://github.com/user-attachments/assets/4d41e345-1c33-45cd-820c-405db3cab66d)
+
+![image](https://github.com/user-attachments/assets/6e894646-64ac-40a8-8928-90a2fbf4e1b0)
+
+![image](https://github.com/user-attachments/assets/c241d2c0-a3b7-432c-b199-07784abbc35d)
 
 
 ### Как оформить решение задания
