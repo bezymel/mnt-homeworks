@@ -41,6 +41,7 @@
 ## Ответ
 
 ![image](https://github.com/user-attachments/assets/e31f86f1-3978-4438-b4ce-bc5c2eabacf5)
+![image](https://github.com/user-attachments/assets/4d41e345-1c33-45cd-820c-405db3cab66d)
 
 
 ### Как оформить решение задания
