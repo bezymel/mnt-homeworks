@@ -24,6 +24,9 @@
 
 ![image](https://github.com/user-attachments/assets/baade704-24ad-4216-9f81-7804aec2131c)
 
+![image](https://github.com/user-attachments/assets/96f49bed-fee0-472f-8260-66e382f2bc46)
+
+
 ### Как оформить решение задания
 
 Выполненное домашнее задание пришлите в виде ссылки на .md-файл в вашем репозитории.
