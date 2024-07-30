@@ -22,10 +22,7 @@
 
 ## Ответ 
 
-![image](https://github.com/user-attachments/assets/83dca42a-74d1-4fd7-85d5-2244fc8c7ca8)
-![image](https://github.com/user-attachments/assets/c53c3327-9b0e-40ea-8b67-5505f5da673d)
-
-
+![image](https://github.com/user-attachments/assets/baade704-24ad-4216-9f81-7804aec2131c)
 
 ### Как оформить решение задания
 
