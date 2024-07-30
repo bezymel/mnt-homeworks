@@ -55,7 +55,7 @@
       unarchive:
         src: "/tmp/lighthouse_static.zip"
         dest: "/var/www/lighthouse"
-        remote_src: yes
+        remote_src: true
         
     - name: Установка Nginx
       package:
@@ -71,4 +71,4 @@
       service:
         name: nginx
         state: started
-        enabled: yes
+        enabled: true
