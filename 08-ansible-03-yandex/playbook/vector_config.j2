@@ -1,1 +1,10 @@
+[data]
+  type = "file"
+  inputs = {"/var/log/syslog"}
 
+[transforms.json]
+  type = "json_encode"
+
+[sinks.console]
+  type = "console"
+  inputs = ["json"]
