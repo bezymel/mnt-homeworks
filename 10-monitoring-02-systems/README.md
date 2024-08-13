@@ -94,11 +94,11 @@ Push системы:
   
 ## Ответ 6
 
-Prometheus: Pull
-TICK: Push
-Zabbix: Гибридная (в основном push, но имеет поддержку pull)
-VictoriaMetrics: Гибридная (может выступать как в роли внешнего, так и внутреннего агрегатора метрик)
-Nagios: Pull
+* Prometheus: Pull
+* TICK: Push
+* Zabbix: Гибридная (в основном push, но имеет поддержку pull)
+* VictoriaMetrics: Гибридная (может выступать как в роли внешнего, так и внутреннего агрегатора метрик)
+* Nagios: Pull
 
 
 #
