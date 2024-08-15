@@ -35,7 +35,7 @@
   <vcsRoots>
     <vcsRoot id="WelcomeVcsRoot" name="Welcome VCS Root">
       <vcs name="Git">
-        <url>https://github.com/bezymel/mnt-homeworks/new/MNT-video/09-ci-05-teamcity/teamcity/example-teamcity.git</url>
+        <url>https://github.com/bezymel/mnt-homeworks/blob/MNT-video/09-ci-05-teamcity/teamcity/teamcity-settings.xml</url>
         <authMethod>PASSWORD</authMethod>
         <username>bezumel</username>
         <password>your-password</password>
