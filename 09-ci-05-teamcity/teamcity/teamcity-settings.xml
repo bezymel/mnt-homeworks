@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <!-- Основной элемент проекта -->
   <name>Welcome Project</name>
 
-  <!-- Настройки для конфигураций сборки -->
   <buildTypes>
-    <!-- Основная конфигурация сборки -->
-    <buildType id="Build_WelcomeProject" name="Build Welcome Project">
+    <!-- Конфигурация для сборки на мастер ветке -->
+    <buildType id="Build_WelcomeProject_Master" name="Build Welcome Project - Master">
       <settings>
         <setting name="maven.runner.goal" value="clean deploy"/>
         <setting name="maven.runner.pomFile" value="pom.xml"/>
@@ -21,7 +19,34 @@
       <triggers>
         <trigger id="triggerOnChanges" type="vcsTrigger">
           <branchFilter>
-            <rule type="plus" branch="+:<default>"/>
+            <rule type="plus" branch="+:refs/heads/master"/>
+            <rule type="minus" branch="-:*"/>
+          </branchFilter>
+        </trigger>
+      </triggers>
+      <vcs>
+        <root id="WelcomeVcsRoot" />
+      </vcs>
+    </buildType>
+
+    <!-- Конфигурация для сборки на всех ветках, кроме master -->
+    <buildType id="Build_WelcomeProject_OtherBranches" name="Build Welcome Project - Other Branches">
+      <settings>
+        <setting name="maven.runner.goal" value="clean test"/>
+        <setting name="maven.runner.pomFile" value="pom.xml"/>
+      </settings>
+      <steps>
+        <step id="mavenBuild" name="Maven Build" type="maven-runner">
+          <mavenVersion ref="default"/>
+          <goal>clean test</goal>
+          <pomFile>pom.xml</pomFile>
+        </step>
+      </steps>
+      <triggers>
+        <trigger id="triggerOnChanges" type="vcsTrigger">
+          <branchFilter>
+            <rule type="minus" branch="-:refs/heads/master"/>
+            <rule type="plus" branch="+:*"/>
           </branchFilter>
         </trigger>
       </triggers>
@@ -31,24 +56,21 @@
     </buildType>
   </buildTypes>
 
-  <!-- Настройки для VCS корневых папок -->
   <vcsRoots>
     <vcsRoot id="WelcomeVcsRoot" name="Welcome VCS Root">
       <vcs name="Git">
-        <url>https://github.com/bezymel/mnt-homeworks/blob/MNT-video/09-ci-05-teamcity/teamcity/teamcity-settings.xml</url>
+        <url>https://github.com/Franky12111990/example-teamcity.git</url>
         <authMethod>PASSWORD</authMethod>
-        <username>bezumel</username>
+        <username>Franky12111990</username>
         <password>your-password</password>
       </vcs>
     </vcsRoot>
   </vcsRoots>
 
-  <!-- Параметры проекта -->
   <parameters>
     <property name="env.SERVER_URL" value="http://teamcity.example.com:8111"/>
   </parameters>
 
-  <!-- Настройки агентов -->
   <agents>
     <agent name="WelcomeAgent" />
   </agents>
