@@ -116,10 +116,8 @@ P.S.: если при запуске некоторые контейнеры б�
 
 ## Ответ 7
 
-![image](https://github.com/user-attachments/assets/79b4e335-1b8b-4a2c-9a90-0893b91fc831)
-![image](https://github.com/user-attachments/assets/fd0b21f2-e6c8-4b64-aa54-e00b4b992a71)
-
-
+![image](https://github.com/user-attachments/assets/ce12d3bd-9482-4cf9-8113-efcce540b1a5)
+![image](https://github.com/user-attachments/assets/891b1779-a874-466f-8e6d-ec426431df42)
 
 #
 8. Перейдите в веб-интерфейс Chronograf (http://localhost:8888) и откройте вкладку Data explorer.
