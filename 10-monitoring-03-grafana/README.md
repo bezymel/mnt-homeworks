@@ -43,6 +43,17 @@
 1. Создайте для каждой Dashboard подходящее правило alert — можно обратиться к первой лекции в блоке «Мониторинг».
 1. В качестве решения задания приведите скриншот вашей итоговой Dashboard.
 
+## Ответ 3
+
+![image](https://github.com/user-attachments/assets/c0c659dc-b0ba-4f72-b734-500525eb59e5)
+![image](https://github.com/user-attachments/assets/b089661a-2ebb-4275-97b4-454519440307)
+![image](https://github.com/user-attachments/assets/a6ab0944-097f-43f8-8e08-dabe44d396e1)
+![image](https://github.com/user-attachments/assets/30893cf9-e08e-4ff4-975f-5bd156c332cd)
+![image](https://github.com/user-attachments/assets/7cc61cee-b331-40d9-b7f2-0d67c1496581)
+![image](https://github.com/user-attachments/assets/4b4525bc-a27c-4fbc-9d3c-50f4eabacb9e)
+![image](https://github.com/user-attachments/assets/4c37c411-1434-4616-a03b-da29ba287b18)
+
+
 ## Задание 4
 
 1. Сохраните ваш Dashboard.Для этого перейдите в настройки Dashboard, выберите в боковом меню «JSON MODEL». Далее скопируйте отображаемое json-содержимое в отдельный файл и сохраните его.
