@@ -45,14 +45,10 @@
 
 ## Ответ 3
 
-![image](https://github.com/user-attachments/assets/c0c659dc-b0ba-4f72-b734-500525eb59e5)
-![image](https://github.com/user-attachments/assets/b089661a-2ebb-4275-97b4-454519440307)
-![image](https://github.com/user-attachments/assets/a6ab0944-097f-43f8-8e08-dabe44d396e1)
-![image](https://github.com/user-attachments/assets/30893cf9-e08e-4ff4-975f-5bd156c332cd)
-![image](https://github.com/user-attachments/assets/7cc61cee-b331-40d9-b7f2-0d67c1496581)
-![image](https://github.com/user-attachments/assets/4b4525bc-a27c-4fbc-9d3c-50f4eabacb9e)
-![image](https://github.com/user-attachments/assets/4c37c411-1434-4616-a03b-da29ba287b18)
-
+![image](https://github.com/user-attachments/assets/bc89d7b3-894f-4035-98d6-aac171d68f8f)
+![image](https://github.com/user-attachments/assets/ad5e638a-ca02-49d7-a6a6-d6a0b6af2fc9)
+![image](https://github.com/user-attachments/assets/0f39ce97-615f-4ca7-bba9-05b49e9d8b8a)
+![image](https://github.com/user-attachments/assets/b3e89188-fae6-438f-b028-1d4501939edc)
 
 ## Задание 4
 
