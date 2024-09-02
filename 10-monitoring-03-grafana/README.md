@@ -32,6 +32,12 @@
 
 Для решения этого задания приведите promql-запросы для выдачи этих метрик, а также скриншот получившейся Dashboard.
 
+## Ответ 2
+
+![image](https://github.com/user-attachments/assets/77baa3cf-fc34-4617-8bb3-e7a866cbee18)
+![image](https://github.com/user-attachments/assets/91f9c7db-594a-4794-965d-e871e8d64880)
+![image](https://github.com/user-attachments/assets/de20b47a-8300-46ff-95e2-5e6c6dc99150)
+
 ## Задание 3
 
 1. Создайте для каждой Dashboard подходящее правило alert — можно обратиться к первой лекции в блоке «Мониторинг».
